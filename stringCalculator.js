@@ -13,9 +13,9 @@ function add(values) {
         console.log(values)
     };
 
-    if (values.includes("-")){
-        throw new Error("you cannot enter negative numbers")
-    }
+    // if (values.includes("-")){
+    //     throw new Error("you cannot enter negative numbers")
+    // }
     let result = 0;
 
     if ( values === "" || values === undefined ){
@@ -24,13 +24,22 @@ function add(values) {
 
     let numbers = values.split(delimiter);
 
-
+    let negative = "";
     for (let number of numbers) {
-        result += parseInt(number);
+        if (number.includes("-")) {
+            negative += number + " "
 
+        }
+        result += parseInt(number);
+        console.log(number);
+    }
+    
+    if (negative) {
+        throw new Error(`you cannot enter negative numbers: ${negative.trim()}`)
+    } else {
+        return result;
     }
 
-    return result;
 };
 
 module.exports = add;

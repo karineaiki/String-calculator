@@ -33,6 +33,11 @@ describe("String Calculator", () => {
     })
 
     test('should raise error if there are negative numbers', () => {
-        expect(() => add("//+\n1,-4\n1")).toThrow('you cannot enter negative numbers')
+        expect(() => add("//+\n1,-4\n1")).toThrow("you cannot enter negative numbers: -4")
     })
+
+    test('should raise error if there are negative numbers', () => {
+        expect(() => add("//+\n1,-4\n1,-5")).toThrow("you cannot enter negative numbers: -4 -5")
+    })
+
 })
