@@ -13,9 +13,6 @@ function add(values) {
         console.log(values)
     };
 
-    // if (values.includes("-")){
-    //     throw new Error("you cannot enter negative numbers")
-    // }
     let result = 0;
 
     if ( values === "" || values === undefined ){
@@ -33,7 +30,7 @@ function add(values) {
         result += parseInt(number);
         console.log(number);
     }
-    
+
     if (negative) {
         throw new Error(`you cannot enter negative numbers: ${negative.trim()}`)
     } else {
